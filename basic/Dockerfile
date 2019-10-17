@@ -1,4 +1,4 @@
-FROM harbor.finupgroup.com/basic/centos-jdk:1.8.0_211
+FROM harbor.xxxxxxx.com/basic/centos-jdk:1.8.0_211
 LABEL  description="不支持外嵌tomcat部署, 支持jar,zip" \
        arthas="arthas version 3.1.1"
 
