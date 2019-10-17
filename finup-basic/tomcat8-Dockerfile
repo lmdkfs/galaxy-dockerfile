@@ -1,0 +1,12 @@
+FROM harbor.finupgroup.com/basic/centos-jdk:1.8.0_211
+LABEL  tomcat="apache-tomcat-8.5.20" \
+       arthas="arthas version 3.1.1"
+
+ADD tomcat/apache-tomcat-8.5.20 /data/tomcat/
+ADD script/run_all.sh /data/run_all.sh
+ADD jacoco/jacocoagent.jar /data/jacocoagent.jar
+ADD arthas/ /root/.arthas/lib/3.1.1/arthas/
+ADD script/arthas_start.sh /data/arthas_start.sh
+
+
+WORKDIR /data

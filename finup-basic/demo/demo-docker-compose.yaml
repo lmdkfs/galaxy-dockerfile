@@ -1,0 +1,27 @@
+version: "3"
+services:
+  tomcat7:
+    container_name: tomcat7-demo
+    build:
+      context: ../
+      dockerfile: tomcat7-Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./demo-jar.jar:/data/demo/demo-jar.jar
+    environment:
+      - serviceName=demo
+      - COMPRESS_TYPE=jar
+  tomcat8:
+      container_name: tomcat8-demo
+      build:
+        context: ../
+        dockerfile: tomcat8-Dockerfile
+      ports:
+        - "8081:8080"
+      volumes:
+        - ./demo-jar.jar:/data/demo/demo-jar.jar
+
+      environment:
+        - serviceName=demo
+        - COMPRESS_TYPE=jar
